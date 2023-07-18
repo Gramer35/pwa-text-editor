@@ -19,7 +19,7 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './index.html',
+        template: 'index.html',
         title: 'PWA Text Editor'
       }),
 
@@ -30,7 +30,9 @@ module.exports = () => {
 
       new WebpackPwaManifest({
         name: "PWA Note Taker",
+        description: 'Browser based text editor.',
         start_url: '/',
+        publicPath: './',
         background_color: '#2b2c26',
         theme_color: '#39b1e4',
         display: 'standalone',
@@ -39,6 +41,8 @@ module.exports = () => {
           sizes: [96, 128, 192, 256, 384, 512],
           destination: path.join('assets', 'icons')
         }],
+        fingerprints: false,
+        inject: true,
       })
     ],
 
