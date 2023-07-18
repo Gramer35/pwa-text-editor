@@ -29,7 +29,16 @@ module.exports = () => {
       }),
 
       new WebpackPwaManifest({
-// Help
+        name: "PWA Note Taker",
+        start_url: '/',
+        background_color: '#2b2c26',
+        theme_color: '#39b1e4',
+        display: 'standalone',
+        icons: [{
+          src: path.resolve('src/images/logo.png'),
+          sizes: [96, 128, 192, 256, 384, 512],
+          destination: path.join('assets', 'icons')
+        }],
       })
     ],
 
