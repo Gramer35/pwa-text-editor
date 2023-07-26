@@ -31,7 +31,7 @@ const assetCache = new CacheFirst({
   cacheName: 'asset-cache',
   plugins: [
     new CacheableResponsePlugin({
-      statuses: [200, 404],
+      statuses: [0, 200],
     }),
     new ExpirationPlugin({
       maxAgeSeconds: 30 * 24 * 60 * 60,
@@ -39,4 +39,4 @@ const assetCache = new CacheFirst({
   ],
 })
 
-registerRoute(({ request }) => request.destination === 'script' || request.destination === 'style', assetCache);
+registerRoute(({ request }) => request.destination === 'script' || request.destination === 'style' || request.destination === 'worker', assetCache);
