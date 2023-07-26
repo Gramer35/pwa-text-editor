@@ -4,7 +4,7 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-        "server": "nodemon server.js --ignore client",
+        "server": "nodemon server.js",
         "build": "web-pack --mode production",
         "start": "webpack --watch"
     },
@@ -12,9 +12,11 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "idb": "^7.1.1"
     },
     "devDependencies": {
         "nodemon": "^2.0.4"
+        
     }
 }
